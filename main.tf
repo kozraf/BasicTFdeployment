@@ -67,7 +67,6 @@ resource "aws_security_group" "nginx" {
 resource "aws_instance" "nginx" {
   ami           = "ami-0c94855ba95c574c8" // this is a Amazon Linux 2 LTS AMI, replace with the one you need
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.deployment.key_name
   subnet_id     = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.nginx.id]
 
