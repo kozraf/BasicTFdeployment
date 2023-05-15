@@ -2,11 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_key_pair" "deployment" {
-  key_name   = "deployment-key"
-  public_key = file("~/.ssh/id_rsa.pub") // assuming you have your public key here
-}
-
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
